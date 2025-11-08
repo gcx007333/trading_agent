@@ -1,0 +1,25 @@
+# config/report_config.yaml
+
+broker_sources:
+  weekly:
+    - "模拟券商A"
+    - "模拟券商B"
+  monthly:
+    - "模拟券商C" 
+    - "模拟券商D"
+  long_term:
+    - "模拟券商E"
+    - "模拟券商F"
+
+report:
+  max_stocks_per_category: 10
+  min_confidence: 0.5
+  include_broker_links: true
+  include_ai_analysis: true
+
+ai_service:
+  azure_deepseek:
+    endpoint: "https://20251104-openai.services.ai.azure.com/openai/v1/"
+    model_name: "DeepSeek-R1"
+    deployment_name: "DeepSeek-R1"
+    # api_key 建议通过环境变量 DEEPSEEK_AZURE_API_KEY 设置

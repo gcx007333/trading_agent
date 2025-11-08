@@ -1,0 +1,26 @@
+create_interactions: true
+feature_groups:
+  price_features: true
+  statistical_features: true
+  technical_features: true
+  time_features: true
+  volume_features: true
+lag_periods:
+- 1
+- 2
+- 3
+- 5
+- 10
+- 20
+rolling_windows:
+- 5
+- 10
+- 20
+- 60
+target_type: open_close
+technical_indicators:
+  cycle: false
+  momentum: true
+  trend: true
+  volatility: true
+  volume: true

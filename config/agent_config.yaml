@@ -1,0 +1,41 @@
+# config/agent_config.yaml
+# Agent层配置
+agent:
+  trading_symbols:
+    - "000001.SZ"  # 平安银行
+    - "000002.SZ"  # 万科A
+    - "600036.SH"  # 招商银行
+  trading_interval: 60  # 交易检查间隔(秒)
+  max_positions: 5      # 最大持仓数量
+
+event_engine:
+  max_workers: 5
+
+state_manager:
+  max_history_length: 1000
+
+memory_system:
+  db_path: "data/database/memory.db"
+  max_memories: 10000
+
+strategy_engine:
+  strategy_config_path: "config/strategies.yaml"
+  custom_strategies_path: "strategies"
+
+decision_maker:
+  confidence_threshold: 0.7
+  max_position_size: 0.1  # 最大仓位比例10%
+  model:
+    model_type: "ensemble"
+    model_path: "models/ensemble"
+  risk:
+    max_drawdown: 0.05    # 最大回撤5%
+    volatility_limit: 0.02 # 波动率限制2%
+
+learning_module:
+  learning_interval: 3600  # 学习间隔1小时
+  memory:
+    db_path: "data/database/memory.db"
+  training:
+    online_learning: true
+    retrain_interval: 86400  # 重新训练间隔1天

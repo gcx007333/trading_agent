@@ -1,0 +1,15 @@
+# config/strategies.yaml
+# 策略配置
+momentum:
+  enabled: true
+  weight: 0.6
+  parameters:
+    rsi_oversold: 30
+    rsi_overbought: 70
+
+mean_reversion:
+  enabled: true
+  weight: 0.4
+  parameters:
+    bollinger_period: 20
+    bollinger_std: 2
